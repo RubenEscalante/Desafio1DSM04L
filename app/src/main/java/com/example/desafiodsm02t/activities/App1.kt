@@ -30,7 +30,6 @@ class App1: Menu() {
             val userApp1 = User(name.text.toString(), lastname.text.toString())
             val scoreAvg = com.example.desafiodsm02t.classes.app1.Score(arrayScr)
 
-
             result.text = "Resultado para: ${userApp1.fullName()} \n Nota promedio: ${scoreAvg.average()} El alumno ha ${scoreAvg.validation()}"
         }
 

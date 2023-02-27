@@ -7,12 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.desafiodsm02t.R
 
 open class Menu: AppCompatActivity() {
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return true
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {

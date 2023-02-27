@@ -16,20 +16,9 @@ class App3: Menu() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app3)
-
-        var spinnerSelected  = populateSpinner()
         val button = findViewById<Button>(R.id.btnApp3)
         val resulttv = findViewById<TextView>(R.id.tvResultApp3)
 
-        button.setOnClickListener{
-            val num1 = findViewById<EditText>(R.id.txtnum1).text.toString().toDouble()
-            val num2 = findViewById<EditText>(R.id.txtnum2).text.toString().toDouble()
-            val result = Calculator(num1,num2,spinnerSelected).getResult()
-            resulttv.text = "El resultado es ${result}"
-        }
-    }
-
-    fun populateSpinner(): String{
         var spinnerSelected  = ""
         val operaciones = arrayOf("+", "-", "x", "/")
         val spinner: Spinner = findViewById(R.id.spinner)
@@ -42,7 +31,12 @@ class App3: Menu() {
             }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
-        return spinnerSelected
+        button.setOnClickListener{
+            val num1 = findViewById<EditText>(R.id.txtnum1).text.toString().toDouble()
+            val num2 = findViewById<EditText>(R.id.txtnum2).text.toString().toDouble()
+            val result = Calculator(num1,num2,spinnerSelected).getResult()
+            resulttv.text = "El resultado es ${result}"
+        }
     }
 
 }

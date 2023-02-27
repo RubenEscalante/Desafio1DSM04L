@@ -26,5 +26,4 @@ class Calculator(val num1: Double, val num2: Double, val operation: String) {
         }
         return result
     }
-
 }
